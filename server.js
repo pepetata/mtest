@@ -4,7 +4,7 @@
 var port = process.env.PORT || 8080
 var config = {
    host: process.env.OPENSHIFT_MYSQL_DB_HOST ? process.env.OPENSHIFT_MYSQL_DB_HOST : "localhost",
-   port: process.env.OPENSHIFT_MYSQL_DB_PORT ? process.env.OPENSHIFT_MYSQL_DB_PORT : "13306",
+   port: process.env.OPENSHIFT_MYSQL_DB_PORT ? process.env.OPENSHIFT_MYSQL_DB_PORT : "3306",
    user: process.env.OPENSHIFT_MYSQL_DB_USERNAME ? process.env.OPENSHIFT_MYSQL_DB_USERNAME : "mb",
    password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD ? process.env.OPENSHIFT_MYSQL_DB_PASSWORD : "mb321.123",
    database: process.env.OPENSHIFT_APP_NAME ? process.env.OPENSHIFT_APP_NAME : "mb",
