@@ -4,9 +4,9 @@
 var port = process.env.PORT || 8080
 var config = {
    host: "localhost",
-   user: process.env.SQL_USER ? process.env.SQL_USER : "mb",
-   password: process.env.SQL_PASSWORD ? process.env.SQL_PASSWORD : "mb321.123",
-   database: process.env.SQL_DATABASE ? process.env.SQL_DATABASE : "mb",
+   user:  "mb",
+   password: "mb321.123",
+   database: "mb",
    timezone: "-02:00"
 //   , debug: true
 };
