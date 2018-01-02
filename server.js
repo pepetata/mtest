@@ -12,6 +12,8 @@ var config = {
 //   , debug: true
 };
 
+console.log(config);
+
 var express = require('express')
         , app = express()
         , http = require('http')
@@ -29,7 +31,7 @@ io.custList = [];
 //TODO - eliminate IP
 // server.listen(port, function() {
 server.listen(port, function () {
-   console.log('1.1 - Server is running on localhost:' + port + '...', server.address());
+   console.log('1.2 - Server is running on localhost:' + port + '...', server.address());
 });
 
 var connection = mysql.createConnection(config);
