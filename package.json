@@ -1,0 +1,29 @@
+{
+  "name": "mtest",
+  "version": "1.0.0",
+  "description": "test node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pepetata@github.com/pepetata/mtest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pepetata/mtest/issues"
+  },
+  "homepage": "https://github.com/pepetata/mtest#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.0.4",
+    "stylus": "^0.54.5"
+  }
+}
