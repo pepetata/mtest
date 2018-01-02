@@ -4,6 +4,7 @@
 var port = process.env.PORT || 8080
 var config = {
    host: "localhost",
+   port: "3306",
    user:  "mb",
    password: "mb321.123",
    database: "mb",
@@ -31,7 +32,17 @@ server.listen(port, function () {
    console.log('Server is running on localhost:' + port + '...', server.address());
 });
 
-var pool = mysql.createPool(config);
+var connection = mysql.createConnection(config);
+connection.connect( function(err){
+if (err){ 
+    throw err;
+}
+else {
+    console.log('Connected');
+}
+ });
+ 
+//var pool = mysql.createPool(config);
 
 app.set('views', process.cwd() + '/public/views');
 app.set('view engine', 'stylus');
@@ -49,16 +60,16 @@ app.get('/index.html', function (req, res) {
    res.sendFile(process.cwd() + "/index.html");
 });
 
-pool.getConnection(function (err, connection) {
-   if (err)
-      throw err;
-   console.log("Connected to database!");
-//   routes(app, connection);
-
-});
+//pool.getConnection(function (err, connection) {
+//   if (err)
+//      throw err;
+//   console.log("Connected to database!");
+////   routes(app, connection);
+//
+//});
 
 var sql = "SELECT * FROM  `motoboy`";
-pool.query(sql, [], function (error, resultCont, fields) {
+connection.query(sql, [], function (error, resultCont, fields) {
    if (error) {
       console.log(error);
       return;
@@ -87,7 +98,7 @@ io.on('connection', function (client) {
    client.on('pongx', function (data) {
       console.log('recebeu um pongx do', data.id, client.id, data.lat, data.lng);
       var sql = "INSERT INTO ping (pingcol) VALUES (?)";
-      pool.query(sql, [client.id], function (error, results) {
+      connection.query(sql, [client.id], function (error, results) {
          if (error)
             throw error;
       });
