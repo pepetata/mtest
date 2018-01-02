@@ -4,6 +4,6 @@ oc get pods
 mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE
 
 // conect a porta local para acessar o mysql do workbench
-oc port-forward mysql-1-v7xmz 13306:3306
+oc port-forward mysql-1-cbclj 13306:3306
 
 

@@ -4,7 +4,7 @@
 var port = process.env.PORT || 8080
 var config = {
    host: "localhost",
-   port: "3306",
+   port: "13306",
    user:  "mb",
    password: "mb321.123",
    database: "mb",
@@ -97,7 +97,7 @@ io.on('connection', function (client) {
 
    client.on('pongx', function (data) {
       console.log('recebeu um pongx do', data.id, client.id, data.lat, data.lng);
-      var sql = "INSERT INTO ping (pingcol) VALUES (?)";
+      var sql = "INSERT INTO ping (pingcol, data) VALUES (?, now())";
       connection.query(sql, [client.id], function (error, results) {
          if (error)
             throw error;
