@@ -53,18 +53,18 @@ pool.getConnection(function (err, connection) {
    if (err)
       throw err;
    console.log("Connected to database!");
-   routes(app, connection);
+//   routes(app, connection);
 
 });
-//
-//var sql = "SELECT * FROM  `motoboy`";
-//pool.query(sql, [], function (error, resultCont, fields) {
-//   if (error) {
-//      console.log(error);
-//      return;
-//   }
-//});
-//
+
+var sql = "SELECT * FROM  `motoboy`";
+pool.query(sql, [], function (error, resultCont, fields) {
+   if (error) {
+      console.log(error);
+      return;
+   }
+});
+
 
 //var io = require(process.cwd() + '/app.js').io;
 //var routesSocket = require(process.cwd() + '/routesSocket.js')
