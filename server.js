@@ -10,13 +10,6 @@ var config = {
    timezone: "-02:00"
 //   , debug: true
 };
-//console.log('process.env.INSTANCE_CONNECTION_NAME', process.env.INSTANCE_CONNECTION_NAME);
-//console.log('process.env.NODE_ENV',process.env.NODE_ENV);
-//if (process.env.INSTANCE_CONNECTION_NAME && process.env.NODE_ENV === 'production') {
-//   config.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
-//}
-//
-//console.log('config=',config);
 
 var express = require('express')
         , app = express()
@@ -56,13 +49,13 @@ app.get('/index.html', function (req, res) {
    res.sendFile(process.cwd() + "/index.html");
 });
 
-//pool.getConnection(function (err, connection) {
-//   if (err)
-//      throw err;
-//   console.log("Connected to database!");
-//   routes(app, connection);
-//
-//});
+pool.getConnection(function (err, connection) {
+   if (err)
+      throw err;
+   console.log("Connected to database!");
+   routes(app, connection);
+
+});
 //
 //var sql = "SELECT * FROM  `motoboy`";
 //pool.query(sql, [], function (error, resultCont, fields) {
