@@ -86,6 +86,12 @@ io.on('connection', function (client) {
 
    client.on('pongx', function (data) {
       console.log('recebeu um pongx do', data.id, client.id, data.lat, data.lng);
+      var sql = "INSERT INTO ping (pingcol) VALUES (?)";
+      pool.query(sql, [client.id], function (error, results) {
+         if (error)
+            throw error;
+      });
+
    });
 
    setInterval(function () {
