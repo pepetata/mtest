@@ -3,11 +3,11 @@
 
 var port = process.env.PORT || 8080
 var config = {
-   host: "localhost",
-   port: "13306",
-   user:  "mb",
-   password: "mb321.123",
-   database: "mb",
+   host: process.env.OPENSHIFT_MYSQL_DB_HOST ? process.env.OPENSHIFT_MYSQL_DB_HOST : "localhost",
+   port: process.env.OPENSHIFT_MYSQL_DB_PORT ? process.env.OPENSHIFT_MYSQL_DB_PORT : "3306",
+   user: process.env.OPENSHIFT_MYSQL_DB_USERNAME ? process.env.OPENSHIFT_MYSQL_DB_USERNAME : "mb",
+   password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD ? process.env.OPENSHIFT_MYSQL_DB_PASSWORD : "mb321.123",
+   database: process.env.OPENSHIFT_APP_NAME ? process.env.OPENSHIFT_APP_NAME : "mb",
    timezone: "-02:00"
 //   , debug: true
 };
@@ -29,7 +29,7 @@ io.custList = [];
 //TODO - eliminate IP
 // server.listen(port, function() {
 server.listen(port, function () {
-   console.log('1.0 - Server is running on localhost:' + port + '...', server.address());
+   console.log('1.1 - Server is running on localhost:' + port + '...', server.address());
 });
 
 var connection = mysql.createConnection(config);
