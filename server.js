@@ -9,7 +9,7 @@ var config = {
    password: process.env.MYSQL_PASSWORD ? process.env.MYSQL_PASSWORD : "mb321.123",
    database: process.env.MYSQL_DATABASE ? process.env.MYSQL_DATABASE : "mb",
    timezone: "-02:00"
-   , debug: true
+//   , debug: true
 };
 
 var x = process.env.MYSQL_USER;
