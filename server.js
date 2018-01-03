@@ -12,7 +12,7 @@ var config = {
    , debug: true
 };
 
-console.log(config,process.env.OPENSHIFT_MYSQL_DB_PORT,process.env.MYSQL_DATABASE);
+console.log(config,process.env.OPENSHIFT_MYSQL_DB_PORT,process.env);
 
 var express = require('express')
         , app = express()
