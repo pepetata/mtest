@@ -12,7 +12,8 @@ var config = {
    , debug: true
 };
 
-console.log(config,process.env.OPENSHIFT_MYSQL_DB_PORT,process.env);
+var x = process.env.MYSQL_USER;
+console.log(config,x,process.env);
 
 var express = require('express')
         , app = express()
