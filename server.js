@@ -4,7 +4,7 @@
 var port = process.env.PORT || 8080
 var config = {
    host: process.env.MYSQL_SERVICE_HOST ? process.env.MYSQL_SERVICE_HOST : "localhost",
-   port: process.env.MYSQL_PORT ? process.env.MYSQL_PORT : "3306",
+   port: process.env.MYSQL_SERVICE_PORT ? process.env.MYSQL_SERVICE_PORT : "3306",
    user: process.env.MYSQL_USER ? process.env.MYSQL_USER : "mb",
    password: process.env.MYSQL_PASSWORD ? process.env.MYSQL_PASSWORD : "mb321.123",
    database: process.env.MYSQL_DATABASE ? process.env.MYSQL_DATABASE : "mb",
