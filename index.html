@@ -12,8 +12,8 @@ and open the template in the editor.
 
       <script src="/socket.io/socket.io.js" ></script>
       <script>
-         console.log('here')
-         var socket = io('http://localhost:8080');
+         console.log('here',location.hostname)
+         var socket = io('http://'+location.hostname+':8080');
          socket.on('connect', function () {});
          socket.on('event', function (data) {});
          socket.on('disconnect', function () {});
@@ -28,6 +28,6 @@ and open the template in the editor.
       </script>
    </head>
    <body>
-      <div>TODO write content  1.0</div>
+      <div>TODO write content  1.1</div>
    </body>
 </html>
