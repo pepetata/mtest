@@ -62,6 +62,9 @@ app.get('/', function (req, res) {
 app.get('/index.html', function (req, res) {
    res.sendFile(process.cwd() + "/index.html");
 });
+app.get('/favicon.ico', function (req, res) {
+   res.sendFile(process.cwd() + "/favicon.ico");
+});
 
 //pool.getConnection(function (err, connection) {
 //   if (err)
@@ -87,6 +90,7 @@ connection.query(sql, [], function (error, resultCont, fields) {
 
 
 var connections = [];
+io.set('transports', [ 'polling', 'websocket' ]);
 io.on('connection', function (client) {
    connections.push(client);
    console.log('Connected: %s. Total: %s', client.id, connections.length);

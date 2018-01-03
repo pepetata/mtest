@@ -12,22 +12,23 @@ and open the template in the editor.
 
       <script src="/socket.io/socket.io.js" ></script>
       <script>
-         console.log('here',location.hostname)
-         var socket = io('http://'+location.hostname+':8080');
+         console.log('here', location.hostname)
+//         var socket = io('http://'+location.hostname+':8080');
+         var socket = io();
          socket.on('connect', function () {});
          socket.on('event', function (data) {});
          socket.on('disconnect', function () {});
 
-   socket.on('pingx', function (data, callback) {
-         console.log('got a pingx', data);
-         callback(-1, -2, "geomsg" );
-         // tell host that this is not a motoboy, this is the customer
-         socket.emit('pongx', {id: -1});
-      });
+         socket.on('pingx', function (data, callback) {
+            console.log('got a pingx', data);
+            callback(-1, -2, "geomsg");
+            // tell host that this is not a motoboy, this is the customer
+            socket.emit('pongx', {id: -1});
+         });
 
       </script>
    </head>
    <body>
-      <div>TODO write content  1.1</div>
+      <div>TODO write content  1.2</div>
    </body>
 </html>
